@@ -28,3 +28,9 @@ Next you will need to update a couple of the files in this new folder you made w
 MCU_SERIES = l4
 CMSIS_MSCU = STM32L496xx
 ```
+Once this is gone, it is also important to update the pins.csv file. You need to make sure that the pins that you are using reflect the ones being used to make the firmware. If you get stuck on this, feel try to refer to the csv file in this repository. If you want to configure the clock, feel free to update stm32l4xx_hal_config.h. From here you should be good to go to make the firmware.bin file. To do this, go to the following directory in the file and do the following:
+```bash
+cd micropython/ports/stm32
+make BOARD=MY_CUSTOM_BOARD
+```
+From here in the stm32 folder, you should see a build file that has your firmware.bin file, which is what you need to flash the board with. 
